@@ -1,0 +1,16 @@
+{
+  "name": "hexo-document-plugin",
+  "version": "0.0.1",
+  "description": "extend hexo api for build document website.",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "postinstall": "patch/index.js"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "hexo": "^3.2.0",
+    "story-fs": "0.0.9"
+  }
+}
