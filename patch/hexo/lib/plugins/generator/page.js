@@ -1,7 +1,7 @@
 'use strict';
 
 function pageGenerator(locals) {
-    return locals.pages.map(function(page) {
+    return locals.pages.map(function (page) {
         var layout = page.layout;
         var path = page.path;
 
@@ -17,6 +17,12 @@ function pageGenerator(locals) {
                     data: page.content
                 }
             }
+        }
+
+        // todo 完善转义列表
+        if (pkg.hexoHackedFeature['cancel_escape_at_document_title'] &&
+            pkg.hexoHackedFeature['cancel_escape_at_document_title'][0] === 'on') {
+            page.title = page.title.replace(/&gt;/g, '>').replace(/&lt;/, '<');
         }
 
         if (!layout || layout === 'false' || layout === 'off') {
