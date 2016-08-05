@@ -3,7 +3,7 @@
 const is_extend = require('hexo-document-plugin/patch/hexo/lib/plugins/helper/is');
 const components_list = require('hexo-document-plugin/patch/hexo/lib/plugins/helper/components-list');
 
-module.exports = function(ctx) {
+module.exports = function (ctx) {
     var helper = ctx.extend.helper;
 
     var date = require('./date');
@@ -57,7 +57,7 @@ module.exports = function(ctx) {
         pkg.hexoHackedFeature['enable_components_list'][0] === 'on') {
         helper.register('components_list', components_list);
     }
-    
+
     helper.register('list_archives', require('./list_archives'));
     helper.register('list_categories', require('./list_categories'));
     helper.register('list_tags', require('./list_tags'));
