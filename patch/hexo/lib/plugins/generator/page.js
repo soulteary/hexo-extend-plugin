@@ -7,7 +7,8 @@ function pageGenerator(locals) {
 
 
         var pkg = require('../../../../../package.json');
-        if (pkg.hexoHackedFeature['enable_components_demo_raw_content'] &&
+        if (pkg.hexoHackedFeature &&
+            pkg.hexoHackedFeature['enable_components_demo_raw_content'] &&
             pkg.hexoHackedFeature['enable_components_demo_raw_content'][0] === 'on') {
 
             // ignore components demo layout
@@ -20,7 +21,8 @@ function pageGenerator(locals) {
         }
 
         // todo 完善转义列表
-        if (pkg.hexoHackedFeature['cancel_escape_at_document_title'] &&
+        if (pkg.hexoHackedFeature &&
+            pkg.hexoHackedFeature['cancel_escape_at_document_title'] &&
             pkg.hexoHackedFeature['cancel_escape_at_document_title'][0] === 'on') {
             page.title = page.title.replace(/&gt;/g, '>').replace(/&lt;/, '<');
         }

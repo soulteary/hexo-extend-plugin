@@ -42,7 +42,8 @@ module.exports = function (ctx) {
     helper.register('is_tag', is.tag);
 
     var pkg = require('../../../../../package.json');
-    if (pkg.hexoHackedFeature['extend_is_helper'] &&
+    if (pkg.hexoHackedFeature &&
+        pkg.hexoHackedFeature['extend_is_helper'] &&
         pkg.hexoHackedFeature['extend_is_helper'][0] === 'on') {
         helper.register('is_homepage', is_extend.homepage);
         helper.register('is_archiveIndex', is_extend.archiveIndex);
@@ -53,7 +54,8 @@ module.exports = function (ctx) {
         helper.register('is_components', is_extend.components);
     }
 
-    if (pkg.hexoHackedFeature['enable_components_list'] &&
+    if (pkg.hexoHackedFeature &&
+        pkg.hexoHackedFeature['enable_components_list'] &&
         pkg.hexoHackedFeature['enable_components_list'][0] === 'on') {
         helper.register('components_list', components_list);
     }

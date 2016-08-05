@@ -15,12 +15,8 @@ const hijackPathList = [
     }
 ];
 
-
-
-hijackPathList.map(function (file) {
-    backup(file);
+Promise.all(hijackPathList.map(backup)).then(function () {
+    console.info('excute patch done.');
+}).catch(function (e) {
+    throw 'Excute patch fail:' + e
 });
-
-
-
-console.info('excute patch done.');
