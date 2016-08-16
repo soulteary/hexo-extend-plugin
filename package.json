@@ -1,6 +1,6 @@
 {
   "name": "hexo-document-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "extend hexo api for build document website.",
   "directories": {
     "lib": "./lib"
@@ -10,8 +10,9 @@
   },
   "main": "index.js",
   "dependencies": {
+    "chokidar": "^1.6.0",
     "hexo": "^3.2.0",
     "story-fs": "0.0.9",
-    "story.md": "0.0.9"
+    "story.md": "0.0.10"
   }
 }
