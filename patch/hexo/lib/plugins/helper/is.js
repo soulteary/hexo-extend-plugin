@@ -1,32 +1,40 @@
 'use strict';
 
-function isHomePageHelper () {
+function isHomePageHelper() {
     return Boolean(this.page.__index && this.page.path === 'index.html');
 }
 
-function isArchiveHelper () {
+function isArchiveHelper() {
     return Boolean(this.page.archive);
 }
 
-function isYearsArchiveHelper () {
+function isYearsArchiveHelper() {
     return Boolean(this.page.archive && this.page.base.match(/\/\d{4}\/$/));
 }
 
 
-function is404Helper () {
+function is404Helper() {
     return Boolean(this.page.path.match(/^404(\/)?(index.html)?$/));
 }
 
-function isSearchHelper () {
+function isSearchHelper() {
     return Boolean(this.page.path.match(/^s(earch)?(\/)?(index.html)?$/));
 }
 
-function isRedirectHelper () {
+function isRedirectHelper() {
     return Boolean(this.page.path.match(/^redirect(\/)?(index.html)?$/));
 }
 
-function isComponentsHelper () {
+function isDocumentHelper() {
+    return Boolean(this.page.path.match(/^(document|docs)(\/)?(.+\.html)?$/))
+}
+
+function isComponentsHelper() {
     return Boolean(this.page.path.match(/^components(\/(\S+.html?))?/) || this.page.path.match(/^components\/.*/));
+}
+
+function isIntroHelper(){
+    return Boolean(this.page.path.match(/^intro(\/(\S+.html?))?/) || this.page.path.match(/^components\/.*/));
 }
 
 
@@ -42,4 +50,8 @@ exports.search = isSearchHelper;
 
 exports.redirect = isRedirectHelper;
 
+exports.document = isDocumentHelper;
+
 exports.components = isComponentsHelper;
+
+exports.intro = isIntroHelper;
