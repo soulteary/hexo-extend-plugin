@@ -1,12 +1,13 @@
 {
   "name": "hexo-document-plugin",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "extend hexo api for build document website.",
   "directories": {
     "lib": "./lib"
   },
   "scripts": {
-    "postinstall": "patch/index.js"
+    "postinstall": "patch/index.js --backup",
+    "preuninstall":"patch/index.js --restore"
   },
   "main": "index.js",
   "dependencies": {
