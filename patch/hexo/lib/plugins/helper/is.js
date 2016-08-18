@@ -24,27 +24,40 @@ function isRedirectHelper() {
     return Boolean(this.page.path.match(/^redirect(\/)?(index.html)?$/));
 }
 
-function isDocumentHelper() {
-    let regexp = new RegExp('^' + (this.config.document_dir || '(document|doc)') + '(\/)?(.+\.html)?$')
-    return Boolean(this.page.path.match(regexp))
+function isDocumentHelper(isRoot) {
+    let regexp = new RegExp('^' + (this.config.document_dir || '(document|doc)') + '(\/)?(.+\.html)?$');
+    if (isRoot) {
+        return Boolean(this.page.path.match(regexp)) && (this.page.path === this.config.document_dir + '/index.html');
+    } else {
+        return Boolean(this.page.path.match(regexp));
+    }
 }
 
-function isComponentsHelper() {
+function isComponentsHelper(isRoot) {
     let regexp = new RegExp('^' + (this.config.components_dir || '(components)') + '(\/(\S+.html?))?');
     let regexpComponentsDirs = new RegExp('^' + (this.config.components_dir || '(components)') + '\/.*');
-    return Boolean(this.page.path.match(regexp) || this.page.path.match(regexpComponentsDirs));
+    if (isRoot) {
+        return Boolean(this.page.path.match(regexp) || this.page.path.match(regexpComponentsDirs)) &&
+            this.page.path === this.config.components_dir + '/index.html';
+    } else {
+        return Boolean(this.page.path.match(regexp) || this.page.path.match(regexpComponentsDirs));
+    }
 }
 
-function isIntroHelper() {
+function isIntroHelper(isRoot) {
     let regexp = new RegExp('^' + (this.config.intro_dir || '(intro|about)') + '(\/(\S+.html?))?');
-    return Boolean(this.page.path.match(regexp));
+    if (isRoot) {
+        return Boolean(this.page.path.match(regexp)) &&
+            this.page.path === this.config.intro_dir + '/index.html';
+    } else {
+        return Boolean(this.page.path.match(regexp));
+    }
 }
 
 function isDownloadHelper() {
     let regexp = new RegExp('^' + (this.config.download_dir || '(download)') + '(\/(\S+.html?))?');
     return Boolean(this.page.path.match(regexp));
 }
-
 
 
 exports.homepage = isHomePageHelper;
