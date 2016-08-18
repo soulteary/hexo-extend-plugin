@@ -13,6 +13,10 @@ const hijackPathList = [
     {
         src: path.resolve(__dirname, 'lib/plugins/generator/page.js'),
         dist: path.resolve(hexoBaseDir, 'lib/plugins/generator/page.js')
+    },
+    {
+        src: path.resolve(__dirname, 'lib/plugins/console/index.js'),
+        dist: path.resolve(hexoBaseDir, 'lib/plugins/console/index.js')
     }
 ];
 

@@ -10,6 +10,13 @@ Hexo 是一个快速、简洁且高效的博客框架，本插件通过扩展hex
 npm install hexo-document-plugin --save
 ```
 
+如果你要在主题中使用扩展的helper,需要执行:
+
+```
+hexo enable-document --on
+```
+
+
 ## 配置说明
 
 ```

@@ -1,0 +1,23 @@
+{
+  "hexo": {
+    "version": "3.2.2"
+  },
+  "hexoHackedFeature": {
+    "enable_components_demo_raw_content": [
+      "on",
+      "components的demo目录保持内容为raw"
+    ],
+    "extend_is_helper": [
+      "on",
+      "使用增强的is辅助函数"
+    ],
+    "enable_components_list": [
+      "on",
+      "使用组件列表侧边栏"
+    ],
+    "cancel_escape_at_document_title": [
+      "on",
+      "组件文档页面标题不转义多次"
+    ]
+  }
+}
