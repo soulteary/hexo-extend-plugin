@@ -1,6 +1,6 @@
 {
   "name": "hexo-document-plugin",
-  "version": "0.0.12",
+  "version": "0.0.15",
   "description": "extend hexo api for build document website.",
   "bin": {
     "convpost": "bin/convert.js"
@@ -17,6 +17,6 @@
     "chokidar": "^1.6.0",
     "hexo": "^3.2.0",
     "story-fs": "0.0.9",
-    "story.md": "0.0.14"
+    "story.md": "0.0.15"
   }
 }

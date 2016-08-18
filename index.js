@@ -5,6 +5,7 @@
  *   {% demobox href="/path/to/your/demo/page" with=300px height=300px %}
  *
  */
+'use strict';
 
 hexo.extend.tag.register('demobox', function (args) {
     var params = {};

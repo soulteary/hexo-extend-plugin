@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require('story-fs');
 const path = require('path');
 const backup = require('../../lib/backup');

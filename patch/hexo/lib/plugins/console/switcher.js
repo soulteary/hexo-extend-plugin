@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const updater = require('../../../../../lib/update-package');
 
