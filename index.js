@@ -19,6 +19,6 @@ hexo.extend.tag.register('demobox', function (args) {
     return '<div class="demo-container" style="' + style + '"><iframe width="100%" height="100%" src="' + (params.href ? params.href : 'about:blank') + '" frameborder="0" allowfullscreen></iframe></div>'
 });
 
-hexo.on('ready', require('./bin/convert'));
+hexo.on('ready', function () {});
 
 hexo.on('generateBefore', require('./lib/generate-post-content'));
