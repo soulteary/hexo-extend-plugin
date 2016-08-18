@@ -54,6 +54,7 @@ module.exports = function (ctx) {
         helper.register('is_components', is_extend.components);
         helper.register('is_document', is_extend.document);
         helper.register('is_intro', is_extend.intro);
+        helper.register('is_download', is_extend.download);
     }
 
     if (pkg.hexoHackedFeature &&

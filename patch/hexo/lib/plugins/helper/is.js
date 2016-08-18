@@ -12,7 +12,6 @@ function isYearsArchiveHelper() {
     return Boolean(this.page.archive && this.page.base.match(/\/\d{4}\/$/));
 }
 
-
 function is404Helper() {
     return Boolean(this.page.path.match(/^404(\/)?(index.html)?$/));
 }
@@ -26,16 +25,26 @@ function isRedirectHelper() {
 }
 
 function isDocumentHelper() {
-    return Boolean(this.page.path.match(/^(document|docs)(\/)?(.+\.html)?$/))
+    let regexp = new RegExp('^' + (this.config.document_dir || '(document|doc)') + '(\/)?(.+\.html)?$')
+    return Boolean(this.page.path.match(regexp))
 }
 
 function isComponentsHelper() {
-    return Boolean(this.page.path.match(/^components(\/(\S+.html?))?/) || this.page.path.match(/^components\/.*/));
+    let regexp = new RegExp('^' + (this.config.components_dir || '(components)') + '(\/(\S+.html?))?');
+    let regexpComponentsDirs = new RegExp('^' + (this.config.components_dir || '(components)') + '\/.*');
+    return Boolean(this.page.path.match(regexp) || this.page.path.match(regexpComponentsDirs));
 }
 
-function isIntroHelper(){
-    return Boolean(this.page.path.match(/^intro(\/(\S+.html?))?/) || this.page.path.match(/^components\/.*/));
+function isIntroHelper() {
+    let regexp = new RegExp('^' + (this.config.intro_dir || '(intro|about)') + '(\/(\S+.html?))?');
+    return Boolean(this.page.path.match(regexp));
 }
+
+function isDownloadHelper() {
+    let regexp = new RegExp('^' + (this.config.download_dir || '(download)') + '(\/(\S+.html?))?');
+    return Boolean(this.page.path.match(regexp));
+}
+
 
 
 exports.homepage = isHomePageHelper;
@@ -55,3 +64,5 @@ exports.document = isDocumentHelper;
 exports.components = isComponentsHelper;
 
 exports.intro = isIntroHelper;
+
+exports.download = isDownloadHelper;
