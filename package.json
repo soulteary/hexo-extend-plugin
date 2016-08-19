@@ -1,6 +1,6 @@
 {
   "name": "hexo-document-plugin",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "extend hexo api for build document website.",
   "bin": {
     "convpost": "bin/convert.js"
@@ -10,13 +10,13 @@
   },
   "scripts": {
     "postinstall": "patch/index.js --backup",
-    "preuninstall":"patch/index.js --restore"
+    "preuninstall": "patch/index.js --restore"
   },
   "main": "index.js",
   "dependencies": {
     "chokidar": "^1.6.0",
     "hexo": "^3.2.0",
-    "story-fs": "0.0.9",
-    "story.md": "0.0.15"
+    "story-fs": "0.0.10",
+    "story.md": "0.0.16"
   }
 }
