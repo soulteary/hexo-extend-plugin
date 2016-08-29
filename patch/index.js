@@ -2,4 +2,49 @@
 
 'use strict';
 
-require('./hexo');
+const fs = require('story-fs');
+const path = require('path');
+const backup = require('../lib/backup');
+const restore = require('../lib/restore');
+
+let hexoBaseDir = path.resolve(__dirname, '../../hexo');
+let hexoUtilBaseDir = path.resolve(__dirname, '../../hexo-util');
+
+const hijackPathList = [
+  {
+    src: path.resolve(__dirname, 'hexo/lib/plugins/helper/index.js'),
+    dist: path.resolve(hexoBaseDir, 'lib/plugins/helper/index.js')
+  },
+  {
+    src: path.resolve(__dirname, 'hexo/lib/plugins/generator/page.js'),
+    dist: path.resolve(hexoBaseDir, 'lib/plugins/generator/page.js')
+  },
+  {
+    src: path.resolve(__dirname, 'hexo/lib/plugins/console/index.js'),
+    dist: path.resolve(hexoBaseDir, 'lib/plugins/console/index.js')
+  },
+  {
+    src: path.resolve(__dirname, 'hexo-util/lib/permalink.js'),
+    dist: path.resolve(hexoUtilBaseDir, 'lib/permalink.js')
+  }
+];
+
+let action = null;
+switch (process.argv[2].slice(2)) {
+  case 'backup':
+    action = backup;
+    break;
+  case 'restore':
+    action = restore;
+    break;
+  default:
+    console.log('Hexo-document-plugin only support `backup` or `restore` files.');
+    process.exit(1);
+    break;
+}
+
+Promise.all(hijackPathList.map(action)).then(function() {
+  console.info('execute patch done.');
+}).catch(function(e) {
+  throw 'Execute patch fail:' + e;
+});

@@ -18,6 +18,10 @@
     "cancel_escape_at_document_title": [
       "on",
       "组件文档页面标题不转义多次"
+    ],
+    "enable_archive_dirs": [
+      "on",
+      "源文件目录使用年月日方式保持目录结构"
     ]
   }
 }
