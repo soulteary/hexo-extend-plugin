@@ -1,6 +1,6 @@
 {
   "name": "hexo-document-plugin",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "extend hexo api for build document website.",
   "bin": {
     "convpost": "bin/convert.js"
