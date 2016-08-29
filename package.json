@@ -1,6 +1,6 @@
 {
   "name": "hexo-extend-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "extend hexo api, give you more features.",
   "bin": {
     "convpost": "bin/convert.js"

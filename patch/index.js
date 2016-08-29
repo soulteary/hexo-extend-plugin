@@ -2,7 +2,7 @@
 
 'use strict';
 
-const debug = require('./log')('[hexo-extend-plugin@patch-index]');
+const debug = require('../lib/log')('[hexo-extend-plugin@patch-index]');
 
 const fs = require('story-fs');
 const path = require('path');
