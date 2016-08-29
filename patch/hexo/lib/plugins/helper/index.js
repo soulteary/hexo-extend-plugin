@@ -2,6 +2,7 @@
 
 const is_extend = require('hexo-document-plugin/patch/hexo/lib/plugins/helper/is');
 const components_list = require('hexo-document-plugin/patch/hexo/lib/plugins/helper/components-list');
+const pkgOption = require('hexo-document-plugin/lib/check-pkg-option');
 
 module.exports = function(ctx) {
   var helper = ctx.extend.helper;
@@ -41,10 +42,8 @@ module.exports = function(ctx) {
   helper.register('is_category', is.category);
   helper.register('is_tag', is.tag);
 
-  var pkg = require('../../../../../package.json');
-  if (pkg.hexoHackedFeature &&
-      pkg.hexoHackedFeature.extend_is_helper &&
-      pkg.hexoHackedFeature.extend_is_helper[0] === 'on') {
+
+  if (pkgOption('extend_is_helper').value) {
     helper.register('is_homepage', is_extend.homepage);
     helper.register('is_archiveIndex', is_extend.archiveIndex);
     helper.register('is_yearsArchive', is_extend.yearsArchive);
@@ -57,9 +56,7 @@ module.exports = function(ctx) {
     helper.register('is_download', is_extend.download);
   }
 
-  if (pkg.hexoHackedFeature &&
-      pkg.hexoHackedFeature.enable_components_list &&
-      pkg.hexoHackedFeature.enable_components_list[0] === 'on') {
+  if (pkgOption('components_list').value) {
     helper.register('components_list', components_list);
   }
 

@@ -2,7 +2,7 @@
   "hexo": {
     "version": "3.2.2"
   },
-  "hexoHackedFeature": {
+  "hexoExtendFeature": {
     "enable_components_demo_raw_content": [
       "on",
       "components的demo目录保持内容为raw"
@@ -11,15 +11,15 @@
       "on",
       "使用增强的is辅助函数"
     ],
-    "enable_components_list": [
-      "on",
+    "components_list": [
+      "off",
       "使用组件列表侧边栏"
     ],
     "cancel_escape_at_document_title": [
-      "on",
+      "off",
       "组件文档页面标题不转义多次"
     ],
-    "enable_archive_dirs": [
+    "archive_dirs_structure_in_source_dir": [
       "on",
       "源文件目录使用年月日方式保持目录结构"
     ]

@@ -91,7 +91,7 @@ module.exports = function(ctx) {
     ]
   }, require('./render'));
 
-  console.register('enable-document', 'Enable document features.', {
+  console.register('extend-features', 'Enable extend features.', {
     init: true,
     desc: 'Enable hexo-document-plugin features.',
     usage: '<type>',

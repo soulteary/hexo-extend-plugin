@@ -1,15 +1,13 @@
 'use strict';
 
+const pkgOption = require('hexo-document-plugin/lib/check-pkg-option');
+
 function pageGenerator(locals) {
   return locals.pages.map(function(page) {
     var layout = page.layout;
     var path = page.path;
 
-    var pkg = require('../../../../../package.json');
-    if (pkg.hexoHackedFeature &&
-        pkg.hexoHackedFeature.enable_components_demo_raw_content &&
-        pkg.hexoHackedFeature.enable_components_demo_raw_content[0] === 'on') {
-
+    if (pkgOption('enable_components_demo_raw_content').value) {
       // ignore components demo layout
       if (path.match(/^components\/\S+\/demo\/.*/)) {
         return {
@@ -20,9 +18,7 @@ function pageGenerator(locals) {
     }
 
     // todo 完善转义列表
-    if (pkg.hexoHackedFeature &&
-        pkg.hexoHackedFeature.cancel_escape_at_document_title &&
-        pkg.hexoHackedFeature.cancel_escape_at_document_title[0] === 'on') {
+    if (pkgOption('cancel_escape_at_document_title').value) {
       page.title = page.title.replace(/&gt;/g, '>').replace(/&lt;/, '<');
     }
 

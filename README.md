@@ -13,18 +13,36 @@ npm install hexo-document-plugin --save
 如果你要在主题中使用扩展的helper,需要执行:
 
 ```
-hexo enable-document --on
+hexo extend-features --on
 ```
 
 
 ## 配置说明
 
 ```
-  "hexoHackedFeature": {
-    "enable_components_demo_raw_content": ["on", "components的demo目录保持内容为raw"],
-    "cancel_escape_at_document_title": ["on", "取消对文档标题内容的转义"],
-    "extend_is_helper": ["on", "使用增强的is辅助函数"],
-    "enable_components_list":["on", "使用组件列表侧边栏"]
-  },
+{
+  "hexoExtendFeature": {
+    "enable_components_demo_raw_content": [
+      "on",
+      "components的demo目录保持内容为raw"
+    ],
+    "extend_is_helper": [
+      "on",
+      "使用增强的is辅助函数"
+    ],
+    "components_list": [
+      "off",
+      "使用组件列表侧边栏"
+    ],
+    "cancel_escape_at_document_title": [
+      "off",
+      "组件文档页面标题不转义多次"
+    ],
+    "archive_dirs_structure_in_source_dir": [
+      "on",
+      "源文件目录使用年月日方式保持目录结构"
+    ]
+  }
+}
 
 ```

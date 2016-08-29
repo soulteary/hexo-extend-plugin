@@ -1,5 +1,7 @@
 'use strict';
 
+const pkgOption = require('hexo-document-plugin/lib/check-pkg-option');
+
 var escapeRegExp = require('./escape_regexp');
 
 var rParam = /:(\w+)/g;
@@ -39,8 +41,6 @@ Permalink.prototype.test = function(str) {
   return this.regex.test(str);
 };
 
-var pkg = require('../../../package.json');
-
 Permalink.prototype.parse = function(str) {
   var match = str.match(this.regex);
   var params = this.params;
@@ -54,9 +54,7 @@ Permalink.prototype.parse = function(str) {
     result[params[i - 1]] = match[i];
   }
 
-  if (pkg.hexoHackedFeature &&
-      pkg.hexoHackedFeature.enable_archive_dirs &&
-      pkg.hexoHackedFeature.enable_archive_dirs[0] === 'on') {
+  if (pkgOption('archive_dirs_structure_in_source_dir').value) {
     result.title = result.title.replace(/^\d{4}\/\d{2}\/\d{2}\//, '');
   }
 
