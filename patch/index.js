@@ -52,7 +52,7 @@ switch (process.argv[2].slice(2)) {
 Promise.all(hijackPathList.map(action)).then(function() {
   debug.log('execute patch done.');
 }).catch(function(e) {
-  let err = 'Execute patch fail:' + e;
+  let err = 'execute patch fail:' + e;
   debug.error(err);
   throw err;
 });
