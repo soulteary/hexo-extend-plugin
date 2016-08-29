@@ -1,8 +1,8 @@
 'use strict';
 
-const is_extend = require('hexo-document-plugin/patch/hexo/lib/plugins/helper/is');
-const components_list = require('hexo-document-plugin/patch/hexo/lib/plugins/helper/components-list');
-const pkgOption = require('hexo-document-plugin/lib/check-pkg-option');
+const is_extend = require('hexo-extend-plugin/patch/hexo/lib/plugins/helper/is');
+const components_list = require('hexo-extend-plugin/patch/hexo/lib/plugins/helper/components-list');
+const pkgOption = require('hexo-extend-plugin/lib/check-pkg-option');
 
 module.exports = function(ctx) {
   var helper = ctx.extend.helper;

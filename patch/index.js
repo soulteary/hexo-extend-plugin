@@ -2,9 +2,7 @@
 
 'use strict';
 
-const moduleName = '[hexo-document-plugin@patch-index]';
-const log = console.log.bind(console, moduleName);
-const error = console.error.bind(console, moduleName);
+const debug = require('./log')('[hexo-extend-plugin@patch-index]');
 
 const fs = require('story-fs');
 const path = require('path');
@@ -46,15 +44,15 @@ switch (process.argv[2].slice(2)) {
     action = restore;
     break;
   default:
-    log('current only support `backup` or `restore` files.');
+    debug.log('current only support `backup` or `restore` files.');
     process.exit(1);
     break;
 }
 
 Promise.all(hijackPathList.map(action)).then(function() {
-  log('execute patch done.');
+  debug.log('execute patch done.');
 }).catch(function(e) {
   let err = 'Execute patch fail:' + e;
-  error(err);
+  debug.error(err);
   throw err;
 });

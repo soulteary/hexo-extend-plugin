@@ -1,6 +1,6 @@
 'use strict';
 
-const pkgOption = require('hexo-document-plugin/lib/check-pkg-option');
+const pkgOption = require('hexo-extend-plugin/lib/check-pkg-option');
 
 var escapeRegExp = require('./escape_regexp');
 

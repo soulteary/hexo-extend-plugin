@@ -99,5 +99,5 @@ module.exports = function(ctx) {
       {name: '--on', desc: 'Enable all features.'},
       {name: '--off', desc: 'Disable all features.'}
     ]
-  }, require('hexo-document-plugin/patch/hexo/lib/plugins/console/switcher'));
+  }, require('hexo-extend-plugin/patch/hexo/lib/plugins/console/switcher'));
 };

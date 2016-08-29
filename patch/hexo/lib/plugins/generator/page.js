@@ -1,6 +1,6 @@
 'use strict';
 
-const pkgOption = require('hexo-document-plugin/lib/check-pkg-option');
+const pkgOption = require('hexo-extend-plugin/lib/check-pkg-option');
 
 function pageGenerator(locals) {
   return locals.pages.map(function(page) {
