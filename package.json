@@ -1,6 +1,6 @@
 {
   "name": "hexo-extend-plugin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "extend hexo api, give you more features.",
   "bin": {
     "convpost": "bin/convert.js"
@@ -17,6 +17,6 @@
     "chokidar": "^1.6.0",
     "hexo": "^3.2.0",
     "story-fs": "0.0.10",
-    "story.md": "0.0.18"
+    "story.md": "0.0.19"
   }
 }
