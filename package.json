@@ -1,6 +1,6 @@
 {
   "name": "hexo-extend-plugin",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "extend hexo api, give you more features.",
   "bin": {
     "convpost": "bin/convert.js"
@@ -16,7 +16,7 @@
   "dependencies": {
     "chokidar": "^1.6.0",
     "hexo": "^3.2.0",
-    "posts-adapter-wp2md-to-hexo": "0.0.1",
+    "posts-adapter-wp2md-to-hexo": "0.0.2",
     "story-fs": "0.0.10"
   }
 }
