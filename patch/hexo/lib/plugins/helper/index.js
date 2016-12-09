@@ -45,15 +45,15 @@ module.exports = function(ctx) {
 
   if (pkgOption('extend_is_helper').value) {
     helper.register('is_homepage', is_extend.homepage);
-    helper.register('is_archiveIndex', is_extend.archiveIndex);
-    helper.register('is_yearsArchive', is_extend.yearsArchive);
-    helper.register('is_404', is_extend.is404);
-    helper.register('is_redirect', is_extend.redirect);
-    helper.register('is_search', is_extend.search);
-    helper.register('is_components', is_extend.components);
-    helper.register('is_document', is_extend.document);
     helper.register('is_intro', is_extend.intro);
     helper.register('is_download', is_extend.download);
+    helper.register('is_document', is_extend.document);
+    helper.register('is_components', is_extend.components);
+    helper.register('is_redirect', is_extend.redirect);
+    helper.register('is_yearsArchive', is_extend.yearsArchive);
+    helper.register('is_404', is_extend.is404);
+    helper.register('is_search', is_extend.search);
+    helper.register('is_archiveIndex', is.archive);//兼容接口
   }
 
   if (pkgOption('components_list').value) {

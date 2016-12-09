@@ -24,6 +24,11 @@ const hijackPathList = [
     md5: 'AE10C4F1BFE39E37983CFB9987968529'
   },
   {
+    src: path.resolve(__dirname, 'hexo/lib/plugins/generator/post.js'),
+    dist: path.resolve(hexoBaseDir, 'lib/plugins/generator/post.js'),
+    md5: '96C9F0FF0BA3A97C4E5241D16A50FDC0'
+  },
+  {
     src: path.resolve(__dirname, 'hexo/lib/plugins/console/index.js'),
     dist: path.resolve(hexoBaseDir, 'lib/plugins/console/index.js'),
     md5: '699A45B14E2197ABC2C162A779CD9275'
