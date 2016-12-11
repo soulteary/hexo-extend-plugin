@@ -6,7 +6,7 @@ Hexo 是一个快速、简洁且高效的博客框架，本插件通过扩展hex
 
 | 插件版本 | Hexo版本 |
 | --- | --- | -- |
-| 0.1.8 | 3.2.2 |
+| 0.1.10 | 3.2.2 |
 
 ## 如何使用插件?
 
@@ -27,6 +27,9 @@ hexo extend-features --on
 
 ```
 {
+  "hexo": {
+    "version": "3.2.2"
+  },
   "hexoExtendFeature": {
     "enable_components_demo_raw_content": [
       "on",
@@ -47,10 +50,13 @@ hexo extend-features --on
     "archive_dirs_structure_in_source_dir": [
       "on",
       "源文件目录使用年月日方式保持目录结构"
+    ],
+    "remove_date_prefix_in_post_url": [
+      "off",
+      "去掉文档页面URL中存在的日期字符串"
     ]
   }
 }
-
 ```
 
 ## 已知问题
