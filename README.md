@@ -1,4 +1,4 @@
-# hexo-extend-plugin
+# Hexo Extend Plugin
 
 Hexo 是一个快速、简洁且高效的博客框架，本插件通过扩展hexo原有的接口，以及对接hexo原有的数据接口，来让写作以及使用hexo制作偏文档类型的站点更加轻松。
 
@@ -7,16 +7,17 @@ Hexo 是一个快速、简洁且高效的博客框架，本插件通过扩展hex
 | 插件版本 | Hexo版本 |
 | --- | --- |
 | 0.1.11 | 3.2.2 / 3.3.1 |
+| 0.1.10 | 3.2.2 |
 
-## 如何使用插件?
+## 使用方法
 
-使用`npm`将插件安装于你的hexo目录即可激活插件主要功能。
+使用`npm`将插件安装于Hexo网站目录即可激活本插件主要功能：
 
 ```
 npm install hexo-extend-plugin --save
 ```
 
-如果你要在主题中使用扩展的helper,需要执行:
+如果你期望在Hexo主题中使用扩展的helper， 可以执行:
 
 ```
 hexo extend-features --on
