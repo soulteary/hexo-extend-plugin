@@ -16,27 +16,38 @@ const hijackPathList = [
   {
     src: path.resolve(__dirname, 'hexo/lib/plugins/helper/index.js'),
     dist: path.resolve(hexoBaseDir, 'lib/plugins/helper/index.js'),
-    md5: '5829B69AF2262825D4731ECC86B46A49'
+    md5: '5829B69AF2262825D4731ECC86B46A49',
+    ver: '3.2.0'
   },
   {
     src: path.resolve(__dirname, 'hexo/lib/plugins/generator/page.js'),
     dist: path.resolve(hexoBaseDir, 'lib/plugins/generator/page.js'),
-    md5: 'AE10C4F1BFE39E37983CFB9987968529'
+    md5: 'AE10C4F1BFE39E37983CFB9987968529',
+    ver: '3.2.0'
   },
-  {
+  { // Hexo v3.2.0
     src: path.resolve(__dirname, 'hexo/lib/plugins/generator/post.js'),
     dist: path.resolve(hexoBaseDir, 'lib/plugins/generator/post.js'),
-    md5: '96C9F0FF0BA3A97C4E5241D16A50FDC0'
+    md5: '96C9F0FF0BA3A97C4E5241D16A50FDC0',
+    ver: '3.2.0'
+  },
+  { // Hexo v3.3.1
+    src: path.resolve(__dirname, 'hexo/lib/plugins/generator/post-v3.3.1.js'),
+    dist: path.resolve(hexoBaseDir, 'lib/plugins/generator/post.js'),
+    md5: 'AB9F0A7E042E838B5B4F194F82FEEF82',
+    ver: '3.3.1'
   },
   {
     src: path.resolve(__dirname, 'hexo/lib/plugins/console/index.js'),
     dist: path.resolve(hexoBaseDir, 'lib/plugins/console/index.js'),
-    md5: '699A45B14E2197ABC2C162A779CD9275'
+    md5: '699A45B14E2197ABC2C162A779CD9275',
+    ver: '3.2.0'
   },
   {
     src: path.resolve(__dirname, 'hexo-util/lib/permalink.js'),
     dist: path.resolve(hexoUtilBaseDir, 'lib/permalink.js'),
-    md5: '9E2BD212DC61875F30EE6D8D3A95ED98'
+    md5: '9E2BD212DC61875F30EE6D8D3A95ED98',
+    ver: '3.2.0'
   }
 ];
 
