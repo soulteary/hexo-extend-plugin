@@ -9,6 +9,7 @@ const path = require('path');
 const backup = require('../lib/backup');
 const restore = require('../lib/restore');
 
+let nodeModulesDir = path.resolve(__dirname, '../../');
 let hexoBaseDir = path.resolve(__dirname, '../../hexo');
 let hexoUtilBaseDir = path.resolve(__dirname, '../../hexo-util');
 
@@ -48,6 +49,30 @@ const hijackPathList = [
     dist: path.resolve(hexoUtilBaseDir, 'lib/permalink.js'),
     md5: '9E2BD212DC61875F30EE6D8D3A95ED98',
     ver: '3.2.0'
+  },
+  {
+    src: path.resolve(__dirname, 'hexo/lib/plugins/filter/after_post_render/index.js'),
+    dist: path.resolve(hexoBaseDir, 'lib/plugins/filter/after_post_render/index.js'),
+    md5: '6238583EDAE87F4C06CA1DF455156566',
+    ver: '3.3.1'
+  },
+  {
+    src: path.resolve(__dirname, 'hexo-generator-archive/index.js'),
+    dist: path.resolve(nodeModulesDir, 'hexo-generator-archive/index.js'),
+    md5: 'EF64AF6AD6D436B3CFFD31E52E77B086',
+    ver: '0.1.4'
+  },
+  {
+    src: path.resolve(__dirname, 'hexo-generator-index/index.js'),
+    dist: path.resolve(nodeModulesDir, 'hexo-generator-index/index.js'),
+    md5: '244A9F117A839EF7BE3CC75227B27FC1',
+    ver: '0.2.0'
+  },
+  {
+    src: path.resolve(__dirname, 'hexo-pagination/lib/pagination.js'),
+    dist: path.resolve(nodeModulesDir, 'hexo-pagination/lib/pagination.js'),
+    md5: '95918298CFA7F28E09EE1720B93A0130',
+    ver: '0.0.2'
   }
 ];
 

@@ -23,6 +23,43 @@ npm install hexo-extend-plugin --save
 hexo extend-features --on
 ```
 
+## 集成功能
+
+### 站外链接自动添加nofollow
+
+Adds nofollow attribute to all external links in your hexo blog posts automatically.
+
+inspire [link](https://github.com/liuzc/hexo-autonofollow) ver: #188f556
+
+### 中英文之间自动添加空格
+
+Add spaces between CJK characters and western characters.
+
+inspire [link](https://github.com/hexojs/hexo-filter-auto-spacing) ver: 0.2.1
+
+### 压缩HTML页面内容
+
+Minify HTML files with HTMLMinifier.
+
+inspire [link](https://github.com/hexojs/hexo-html-minifier) ver: #2d0b092
+
+
+### 自动插入Markdown TOC
+
+📖 Insert a markdown TOC before posts be rendered.
+
+inspire [link](https://github.com/bubkoo/hexo-toc) ver: #2f0c6fc
+
+
+### 生成跳转页面
+
+Generate alias pages for redirecting to posts, pages or URL
+
+inspire [ink](https://github.com/hexojs/hexo-generator-alias) ver: # #6d96684
+
+
+concat hexo-generator-feed@1.1.0 / hexo-generator-seo-friendly-sitemap@0.0.16...
+
 
 ## 配置说明
 

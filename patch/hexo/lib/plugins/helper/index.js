@@ -2,6 +2,7 @@
 
 const is_extend = require('hexo-extend-plugin/patch/hexo/lib/plugins/helper/is');
 const components_list = require('hexo-extend-plugin/patch/hexo/lib/plugins/helper/components-list');
+const open_graph_upgrade = require('hexo-extend-plugin/patch/hexo/lib/plugins/helper/open_graph');
 const pkgOption = require('hexo-extend-plugin/lib/check-pkg-option');
 
 module.exports = function(ctx) {
@@ -45,15 +46,19 @@ module.exports = function(ctx) {
 
   if (pkgOption('extend_is_helper').value) {
     helper.register('is_homepage', is_extend.homepage);
+    helper.register('is_archiveRoot', is_extend.archiveRoot);
+
     helper.register('is_intro', is_extend.intro);
     helper.register('is_download', is_extend.download);
     helper.register('is_document', is_extend.document);
     helper.register('is_components', is_extend.components);
     helper.register('is_redirect', is_extend.redirect);
     helper.register('is_yearsArchive', is_extend.yearsArchive);
+    helper.register('is_monthsArchive', is_extend.monthsArchive);
+    helper.register('is_daysArchive', is_extend.daysArchive);
     helper.register('is_404', is_extend.is404);
     helper.register('is_search', is_extend.search);
-    helper.register('is_archiveIndex', is.archive);//兼容接口
+    helper.register('is_archiveIndex', is.archive); //兼容接口
   }
 
   if (pkgOption('components_list').value) {
@@ -65,7 +70,11 @@ module.exports = function(ctx) {
   helper.register('list_tags', require('./list_tags'));
   helper.register('list_posts', require('./list_posts'));
 
-  helper.register('open_graph', require('./open_graph'));
+  if (pkgOption('upgrade_open_graph').value) {
+    helper.register('open_graph', open_graph_upgrade);
+  } else {
+    helper.register('open_graph', require('./open_graph'));
+  }
 
   helper.register('number_format', require('./number_format'));
 

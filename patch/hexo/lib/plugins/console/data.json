@@ -2,7 +2,49 @@
   "hexo": {
     "version": "3.2.2"
   },
+  "hexoPlugin": {
+    "autoNoFollow": [
+      "on",
+      "站外链接自动补全nofollow属性"
+    ],
+    "autoSpacing": [
+      "on",
+      "中英文之间自动添加空格"
+    ],
+    "htmlMinifier": [
+      "on",
+      "压缩HTML页面内容"
+    ],
+    "toc": [
+      "on",
+      "页面toc"
+    ],
+    "alias": [
+      "on",
+      "生成跳转页面"
+    ],
+    "feed": [
+      "on",
+      "生成rss页面"
+    ],
+    "wordCount":[
+      "on",
+      "统计字数"
+    ]
+  },
   "hexoExtendFeature": {
+    "upgrade_hexo_generator_archive":[
+      "on",
+      "使用自定义归档生成"
+    ],
+    "upgrade_open_graph":[
+      "on",
+      "使用自定义的OPEN_GRAPH"
+    ],
+    "upgrade_excerpt":[
+      "on",
+      "使用自定义的截断函数替换默认的截断函数"
+    ],
     "enable_components_demo_raw_content": [
       "on",
       "components的demo目录保持内容为raw"

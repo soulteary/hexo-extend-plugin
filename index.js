@@ -39,3 +39,5 @@ hexo.on('ready', function() {
 });
 
 hexo.on('generateBefore', require('./lib/generate-post-content'));
+
+require('./feature/index')(hexo);

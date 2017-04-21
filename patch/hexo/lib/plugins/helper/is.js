@@ -85,6 +85,7 @@ exports.tag = isTagHelper;
 function isHomePageHelper() {
     return Boolean(this.page.__index && this.page.path === 'index.html');
 }
+exports.homepage = isHomePageHelper;
 
 function isIntroHelper(isRoot) {
     let regexp = new RegExp('^' + (this.config.intro_dir || '(intro|about)') + '(\/(\S+.html?))?');
@@ -128,6 +129,17 @@ function isRedirectHelper() {
 function isYearsArchiveHelper() {
     return Boolean(this.page.archive && this.page.base.match(/\/\d{4}\/$/));
 }
+exports.yearsArchive = isYearsArchiveHelper;
+
+function isMonthsArchiveHelper () {
+  return Boolean(this.page.archive && this.page.base.match(/\/\d{4}\/\d{2}\/$/));
+}
+exports.monthsArchive = isMonthsArchiveHelper;
+
+function isDaysArchiveHelper () {
+  return Boolean(this.page.archive && this.page.base.match(/\/\d{4}\/\d{2}\/\d{2}\/$/));
+}
+exports.daysArchive = isDaysArchiveHelper;
 
 function is404Helper() {
     return Boolean(this.page.path.match(/^404(\/)?(index.html)?$/));
@@ -137,12 +149,17 @@ function isSearchHelper() {
     return Boolean(this.page.path.match(/^s(earch)?(\/)?(index.html)?$/));
 }
 
-exports.homepage = isHomePageHelper;
+function isArchiveRoot () {
+  return Boolean(this.page.archive && this.page.base.match(/^archives\/$/));
+}
+exports.archiveRoot = isArchiveRoot;
+
 exports.intro = isIntroHelper;
 exports.download = isDownloadHelper;
 exports.document = isDocumentHelper;
 exports.components = isComponentsHelper;
 exports.redirect = isRedirectHelper;
-exports.yearsArchive = isYearsArchiveHelper;
+
+
 exports.is404 = is404Helper;
 exports.search = isSearchHelper;

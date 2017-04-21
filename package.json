@@ -14,9 +14,23 @@
   },
   "main": "index.js",
   "dependencies": {
+    "bluebird": "^3.5.0",
+    "cheerio": "^0.22.0",
     "chokidar": "^1.6.0",
+    "ejs": "^2.5.6",
     "hexo": "^3.2.0",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-pagination": "^0.1.0",
+    "html-minifier": "^3.4.3",
+    "lodash": "^4.17.4",
+    "markdown-toc": "^1.1.0",
+    "minimatch": "^3.0.3",
+    "numeral": "^2.0.6",
+    "nunjucks": "^3.0.0",
     "posts-adapter-wp2md-to-hexo": "0.0.2",
-    "story-fs": "0.0.10"
+    "pretty-data": "^0.40.0",
+    "story-fs": "0.0.10",
+    "utils-merge": "^1.0.0"
   }
 }
